@@ -1,0 +1,72 @@
+<p-card>
+  <div class="p-grid">
+    <div class="p-col">
+
+    </div>
+    <div class="p-col-10">
+      <div class="img-container" style="margin-bottom: 1em">
+        <img height="200px"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1024px-International_Pok%C3%A9mon_logo.svg.png" />
+      </div>
+
+      <p-table #dt [value]="pokemonList" [totalRecords]="totalRecords" [paginator]="false" [rows]="20"
+        [loading]="loading">
+        <ng-template pTemplate="caption">
+          <div class="p-inputgroup" style="text-align: end;">
+            <input type="text" pInputText [(ngModel)]="searchName" placeholder="Search By Name">
+            <button type="button" pButton pRipple icon="pi pi-search" (click)="filterName()"></button>
+          </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+          <tr>
+            <th pSortableColumn="id">No<p-sortIcon field="id"></p-sortIcon>
+            </th>
+            <th pSortableColumn="name">Name<p-sortIcon field="name"></p-sortIcon>
+            </th>
+            <th pSortableColumn="height">Height<p-sortIcon field="height"></p-sortIcon>
+            </th>
+            <th pSortableColumn="weight">Weight<p-sortIcon field="weight"></p-sortIcon>
+            </th>
+            <th pSortableColumn="base_experience">Experience<p-sortIcon field="base_experience"></p-sortIcon>
+            </th>
+            <th></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-pokemon>
+          <tr>
+            <td>{{pokemon?.id}}</td>
+            <td>{{pokemon?.name}}</td>
+            <td>{{pokemon?.height}}</td>
+            <td>{{pokemon?.weight}}</td>
+            <td>{{pokemon?.base_experience}}</td>
+            <td class="action-button">
+              <a [routerLink]="['pokemon/', pokemon?.id]">
+                <p-button label="Detail"></p-button>
+              </a>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr id="row-empty">
+            <td class="cell-breakWord" [attr.colspan]="6">
+              No Pokemon
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <div class="p-grid magin-top">
+        <div class="p-col-6">
+          <p-button label="previous" (onClick)="loadPekemon(previous)" [disabled]="!previous"></p-button>
+        </div>
+        <div class="p-col-6" style="text-align: end;">
+          <p-button label="next" (onClick)="loadPekemon(next)" [disabled]="!next"></p-button>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="p-col">
+
+    </div>
+  </div>
+</p-card>

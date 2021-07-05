@@ -24,9 +24,16 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeng-lts/resources/themes/nova-light/theme.css",
+              "node_modules/primeng-lts/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css",
+              "./node_modules/primeflex/primeflex.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/quill/dist/quill.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -84,9 +91,16 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeng-lts/resources/themes/nova-light/theme.css",
+              "node_modules/primeng-lts/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css",
+              "./node_modules/primeflex/primeflex.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/quill/dist/quill.js"
+            ]
           }
         },
         "lint": {
@@ -115,6 +129,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "pokemon-dex"
 }

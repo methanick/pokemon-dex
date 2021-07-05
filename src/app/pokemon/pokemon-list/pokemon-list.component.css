@@ -1,0 +1,17 @@
+.magin-top{
+  margin-top: 1em;
+}
+
+.img-container{
+  display: flex;
+  justify-content: center;
+}
+
+.img-banner{
+  height: 20vh;
+}
+
+.action-button{
+  display: flex;
+  justify-content: center;
+}
